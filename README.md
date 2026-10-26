@@ -45,7 +45,7 @@ Status Indicators:
 - **Typography**: Helvetica (UI), Fira Code (financial figures)
 - **Target**: Desktop GUI (Terminal in MVP, Terminal + Web in v1+)
 - **Interaction**: Text hover feature with underline
-- **Aesthetic**: Utilitarian + Brutalist UI
+- **Aesthetic**: Utilitarian + Swiss UI | Patreon + T212 inspired
 - **Accessibility**: High contrast, keyboard navigation
 
 📐 **Figma Design Board**: [insert updated]
@@ -98,14 +98,14 @@ Final Score: Type + Budget + Duration + Genre + Title (Ascending = Higher Priori
 
 ## Phase 2: Production MVP (v1) - Django Based System
 
-**Status**: DEVELOPING 
+**Status**: DEVELOPING (merging old + new system)
 
 
 **Technology Stack**
 - Backend: Python, PGSQL, TS
 - Libraries: Pytest, Django, Faker, asyncio
 - Interface: Command-line terminal
-- Frontend: Tailwind CSS, React 
+- Frontend: HTML Triad; Tailwind CSS, React 
 
 **Core Features (DECOUPLED)**
 - Plugin + Microkernel Architecture via Decoupling
@@ -116,6 +116,17 @@ Final Score: Type + Budget + Duration + Genre + Title (Ascending = Higher Priori
 ## 💻 Implementation / Simulation Guide
 
 TBD - Interactive Lens (ROLEPLAY)
+encrypt_backend/
+├── encrypt/                # Django Settings
+│   ├── settings.py         # Points to Cloud PGSQL url
+│   └── urls.py             # Routes to core.urls
+└── core/                   # The ONLY app you need
+    ├── models.py           # Project, Proposal, Ledger (No bloated auth/user profiles)
+    ├── plugins/            # Your Microkernel Engines
+    │   ├── heapq_queue.py  # Priority Queue math
+    │   └── waterfall.py    # PostgreSQL SELECT FOR UPDATE math
+    ├── views.py            # The Lens Dispatcher (only 2-3 endpoints)
+    └── urls.py             # /api/simulate-lens/
 
 
 ---
